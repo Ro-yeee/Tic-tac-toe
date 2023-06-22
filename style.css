@@ -13,8 +13,9 @@ body{
 }
 .header{
     padding: 1.5em;
-    background: #f8ff00;
-    border-bottom: 6px solid black;
+    background: black;
+    color: white;
+    border-bottom: 6px solid #2dff00;
 }
 .title{
     text-align: center;
