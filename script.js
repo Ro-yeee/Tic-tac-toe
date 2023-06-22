@@ -12,7 +12,9 @@ const gameBoard = (() =>{
 
     const board = ["","","","","","","","",""]
 
-    const setField = (index,sign) => board[index] = sign
+    const setField = (index,sign) => {
+        board[index] = sign
+    }
 
     const getField = (index) => board[index]
 
@@ -57,7 +59,6 @@ const gameController = (() =>{
 
     const playRound = (index) =>{
         gameBoard.setField(index, getCurrentPlayerSign())
-        console.log(round)
         round++
    
     }
