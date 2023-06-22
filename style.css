@@ -28,19 +28,32 @@ body{
     align-items: center;
     gap: 2em;
 }
+.message{
+    font-size: 5em;
+    color: white;
+}
 .gameBoard{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 1.5em;
 }
 .field{
-    width: 14em;
-    height: 14em;
+    width: 8em;
+    height: 8em;
     border: 1px solid black;
     border-radius: 2em;
     background-color: white;
     cursor: pointer;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+    transition: 500ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-family: 'Cherry Bomb One', cursive;
+}
+.field:hover{
+    transform: scale(1.05);
 }
 @media(max-width: 600px){
     .field{
