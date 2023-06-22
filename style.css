@@ -9,17 +9,18 @@
 body{
     padding: 0;
     margin: 0;
-    background: #1E3640;
+    background: #03212d;
 }
 .header{
-    padding: 2em;
-    background: orange;
-    border-bottom: 4px solid black;
+    padding: 1.5em;
+    background: #f8ff00;
+    border-bottom: 6px solid black;
 }
 .title{
     text-align: center;
-    font-size: 5em;
-    font-family: 'Chokokutai', cursive;
+    font-size: 7em;
+    transition: 500ms;
+    font-family: 'Shrikhand', cursive;
 }
 .mainContainer{
     display: flex;
@@ -38,26 +39,31 @@ body{
     gap: 1.5em;
 }
 .field{
-    width: 8em;
-    height: 8em;
-    border: 1px solid black;
-    border-radius: 2em;
-    background-color: white;
+    width: 14rem;
+    height: 14rem;
+    border: 2px solid #03212d;
+    border-radius: 2rem;
+    background-color: black;
+    color: #08c6e7;
     cursor: pointer;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
     transition: 500ms;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
-    font-family: 'Cherry Bomb One', cursive;
+    font-size: 8rem;
+    font-family: 'Carter One', cursive;
 }
 .field:hover{
     transform: scale(1.05);
 }
 @media(max-width: 600px){
+    .title{
+        font-size: 5em;
+    }
     .field{
-        width: 10em;
-        height: 10em;
+        width: 8rem;
+        height: 8rem;
+        font-size: 5rem;
     }
 }
