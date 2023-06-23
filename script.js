@@ -58,7 +58,12 @@ const displayController = (() =>{
         }
     }
 
-    return{setMessage,reset}
+    const setColor = (val) =>{
+        val.forEach(value =>{
+            fields[value].classList.add("yellow")
+        })
+    }
+    return{setMessage,reset,setColor}
 })()
 
 // Module for Game Controller , it controls the flow of the game
@@ -70,17 +75,36 @@ const gameController = (() =>{
 
     const playRound = (index) =>{
         gameBoard.setField(index, getCurrentPlayerSign())
+        const winCombination = checkForWinner(index)
+        if(winCombination){
+            displayController.setMessage(`Player ${getCurrentPlayerSign()} Won !`)
+            displayController.setColor(winCombination)
+            return
+        }
+        if(round === 9){
+            displayController.setMessage(`It's a Draw`)
+            return
+        }
         round++
         displayController.setMessage(`Player ${getCurrentPlayerSign()}'s Turn`)
    
     }
 
     const getCurrentPlayerSign = () =>{
-        if(round % 2 ==0){
+        if(round % 2 === 0){
             return player2.getSign()
         }else{
             return player1.getSign()
         }
+    }
+
+    const checkForWinner = (index) =>{
+        fieldindex = +index  //converting the index which is string to integer
+        let winCombination = false
+        const winningCombinations = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6] ]
+        const combinationsToCheck = winningCombinations.filter(element => element.includes(fieldindex))
+        winningCombinations.some(combination => combination.every(element => gameBoard.getField(element) === getCurrentPlayerSign())? winCombination = combination:false)
+        return winCombination
     }
 
     const reset = () =>{

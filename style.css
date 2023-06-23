@@ -66,6 +66,9 @@ body{
 .pink{
     color: #ff0079;
 }
+.yellow{
+    background: #ffd500;
+}
 @media(max-width: 600px){
     .title{
         font-size: 5em;
