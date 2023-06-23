@@ -90,7 +90,7 @@ body{
 }
 @media(max-width: 600px){
     .title{
-        font-size: 6em;
+        font-size: 5.5em;
     }
     .field{
         width: 9rem;
@@ -98,8 +98,8 @@ body{
         font-size: 6rem;
     }
     .message{
-        font-size: 4.5em;
-        margin-top: 8px;
+        font-size: 3.5em;
+        margin-top: 18px;
     }
     .gameBoard{
         margin-top: 10px;
