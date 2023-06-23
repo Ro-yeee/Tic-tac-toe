@@ -47,7 +47,6 @@ body{
     border: 4px solid #ffffff;
     border-radius: 2rem;
     background-color: black;
-    color: #ff0079;
     cursor: pointer;
     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
     transition: 500ms;
@@ -60,13 +59,19 @@ body{
 .field:hover{
     transform: scale(1.05);
 }
+.white{
+    color: white;
+}
+.pink{
+    color: #ff0079;
+}
 @media(max-width: 600px){
     .title{
         font-size: 5em;
     }
     .field{
-        width: 8rem;
-        height: 8rem;
-        font-size: 5rem;
+        width: 9rem;
+        height: 9rem;
+        font-size: 6rem;
     }
 }

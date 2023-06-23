@@ -27,7 +27,9 @@ const gameBoard = (() =>{
     return {setField,getField,reset}
 })()
 
+// Module for the UI of the game
 const displayController = (() =>{
+    let round = 0
 
     const fields = document.querySelectorAll(".field")
     const messagefield = document.querySelector(".message")
@@ -37,6 +39,12 @@ const displayController = (() =>{
             if(gameController.isFieldOccupied(e.target.dataset.index)) return
             gameController.playRound(e.target.dataset.index)
             field.textContent = gameBoard.getField(e.target.dataset.index)
+            if(roud % 2 !== 0){
+                field.classList.add("white")
+            }else{
+                field.classList.add("pink")
+            }
+            round++
         })
     })
 
@@ -47,7 +55,6 @@ const displayController = (() =>{
     }
 
     return{reset}
-
 })()
 
 // Module for Game Controller , it controls the flow of the game
