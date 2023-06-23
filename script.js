@@ -39,7 +39,7 @@ const displayController = (() =>{
             if(gameController.isFieldOccupied(e.target.dataset.index)) return
             gameController.playRound(e.target.dataset.index)
             field.textContent = gameBoard.getField(e.target.dataset.index)
-            if(roud % 2 !== 0){
+            if(round % 2 !== 0){
                 field.classList.add("white")
             }else{
                 field.classList.add("pink")
@@ -48,13 +48,17 @@ const displayController = (() =>{
         })
     })
 
+    const setMessage = (message) =>{
+        messagefield.textContent = message
+    }
+
     const reset = () =>{
         for(let i=0; i < fields.length; i++){
             fields[i].textContent = ""
         }
     }
 
-    return{reset}
+    return{setMessage,reset}
 })()
 
 // Module for Game Controller , it controls the flow of the game
@@ -67,6 +71,7 @@ const gameController = (() =>{
     const playRound = (index) =>{
         gameBoard.setField(index, getCurrentPlayerSign())
         round++
+        displayController.setMessage(`Player ${getCurrentPlayerSign()}'s Turn`)
    
     }
 
